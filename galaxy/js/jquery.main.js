@@ -63,6 +63,20 @@ $(document).ready(function() {
 			event.preventDefault();
 		});
 	}
+	$('.accordion .item .heading').click(function () {
+	    if (!$(this).parent().hasClass('active')) {
+	        $(this).parents('.accordion').children('.item.active').find('.expanded').slideUp(500, function () {
+	            $(this).parent().removeClass('active');
+	        });
+	        $(this).parent().find('.expanded').slideDown(500, function () {
+	            $(this).parent().addClass('active')
+	        });
+	    } else {
+	        $(this).parents('.accordion').children('.item.active').find('.expanded').slideUp(500, function () {
+	            $(this).parent().removeClass('active');
+	        });
+	    }
+	});
 });
 
 function initPopupGallery() {

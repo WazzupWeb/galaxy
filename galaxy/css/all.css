@@ -326,7 +326,7 @@ ol li li {
     float: left;
     text-indent: -9999px;
     overflow: hidden;
-    background: url(../images/logo.png) no-repeat;
+    background: url(../images/svg/galaxy_logo_az.svg) no-repeat;
     width: 204px;
     height: 61px;
     margin: 12px 0 0 5px;
@@ -616,6 +616,13 @@ textarea {
 }
 #sidebar .menu {
     display: none;
+}
+#sidebar.compare-side {
+    width: 275px;
+    margin-right: 0;
+}
+#sidebar.compare-side + #content {
+    padding-left: 40px;
 }
 #content {
     float: right;
@@ -1190,6 +1197,10 @@ textarea {
     display: block;
     z-index: 5;
 }
+.completed .complet {
+    display: block;
+    z-index: 5;
+}
 /*
         End
 */
@@ -1273,11 +1284,31 @@ textarea {
 }
 .illustration .slide-list a {
     text-align: center;
-    line-height: 229px;
+    height: 100%;
+    line-height: 230px;
+}
+.illustration .slide-list .frame {
+    display: inline-block;
     vertical-align: middle;
+    line-height: 32px;
 }
 .illustration .slide-list img {
+    display: inline-block;
     vertical-align: middle;
+}
+.illustration .slide-list span {
+    display: block;
+    padding: 14px 0 0;
+    font-size: 44px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    color: #75abc2;
+}
+.illustration .slide-list b {
+    display: block;
+    font-size: 24px;
+    font-weight: normal;
 }
 .block-title {
     display: block;
@@ -2225,6 +2256,9 @@ textarea {
 .product-list li:nth-child(even) {
     background: #f1f7fa;
 }
+.product-list.blocks25 li {
+    width: 25%;
+}
 .product-list h3 {
     font-size: 17px;
     margin: 8px 0 24px;
@@ -2336,10 +2370,13 @@ textarea {
     border-width: 1px 0;
     margin-bottom: -1px;
 }
-.product-list.blocks.blocks25 li {
+.product-list.blocks25 li {
     width: 25%;
 }
 .product-list.blocks li:nth-child(-n+3) {
+    border-top: 0;
+}
+.product-list.blocks25 li:nth-child(-n+4) {
     border-top: 0;
 }
 .product-list.blocks .visual {
@@ -3099,7 +3136,7 @@ textarea {
 }
 .review {
     margin: 0;
-    padding: 0;
+    padding: 0 0 35px;
     list-style: none;
     overflow: hidden;
     line-height: 17px;
@@ -3141,6 +3178,10 @@ textarea {
 }
 .review .rating {
     margin: 0;
+}
+.login-link {
+    display: block;
+    width: 100%;
 }
 .side-text {
     font-size: 13px;
@@ -3463,6 +3504,7 @@ textarea {
     letter-spacing: normal;
 }
 .list-item {
+    position: relative;
     font-size: 13px;
     line-height: 19px;
     text-align: center;
@@ -3523,6 +3565,22 @@ textarea {
     padding-left: 15px;
     padding-right: 14px;
 }
+.wish-list .delete,
+.compare .delete {
+    position: absolute;
+    text-indent: 101%;
+    overflow: hidden;
+    background: url(../images/svg/Close.svg) no-repeat 0 0 / contain;
+    width: 18px;
+    height: 17px;
+    top: 0;
+    right: 0;
+    z-index: 15;
+}
+.wish-list .delete:hover,
+.compare .delete:hover {
+    background-image: url(../images/icons/Close-hover.png);
+}
 .buy-wishlist {
     overflow: hidden;
     position: absolute;
@@ -3560,7 +3618,7 @@ textarea {
 .compare {
     overflow-x: auto;
     overflow-y: hidden;
-    margin: 0 0 -6px 252px;
+    margin: 0 0 -6px 232px;
     padding-bottom: 25px;
 }
 .compare-head table,
@@ -3660,6 +3718,9 @@ textarea {
 .order-control .active span,
 .compare-controls .active span {
     border-color: transparent !important;
+}
+.compare-holder {
+    padding: 38px 32px;
 }
 .order {
     overflow: hidden;
@@ -4661,11 +4722,11 @@ textarea {
         -ms-transition: -ms-transform 500ms ease;
         -o-transition: -o-transform 500ms ease;
         transition: transform 500ms ease;
-        -webkit-transform: translateX(-300px);
-        -moz-transform: translateX(-300px);
-        -ms-transform: translateX(-300px);
-        -o-transform: translateX(-300px);
-        transform: translateX(-300px);
+        -webkit-transform: translateX(-330px);
+        -moz-transform: translateX(-330px);
+        -ms-transform: translateX(-330px);
+        -o-transform: translateX(-330px);
+        transform: translateX(-330px);
     }
     #main > .filter {
         display: block !important;
@@ -4748,7 +4809,6 @@ textarea {
     .navigation {
         max-height: 100%;
     }
-
     .product-list .add {
         margin-left: 12px;
     }
@@ -4897,6 +4957,12 @@ textarea {
         float: none;
         overflow: hidden;
         width: auto;
+    }
+    .product-list.blocks25 li {
+        width: 33.333%;
+    }
+    #sidebar.compare-side + #content {
+        padding-left: 0;
     }
 }
 @media screen and (max-width: 635px) {
@@ -5263,7 +5329,8 @@ textarea {
         width: 21px;
         height: auto;
     }
-    .product-list.blocks li {
+    .product-list.blocks li,
+    .product-list.blocks25 li {
         float: none;
         overflow: hidden;
         width: 100%;
@@ -5451,6 +5518,9 @@ textarea {
         margin: 5px 0 0;
         display: block;
         width: 100%;
+    }
+    .compare-holder {
+        padding: 10px;
     }
     .compare-head {
         width: 148px;
@@ -5706,8 +5776,8 @@ textarea {
         max-width: 300px;
         height: auto;
     }
-    /* Update 28.01 */
-    #header .control {
+    #header .control,
+    .casino {
         display: none;
     }
 }
