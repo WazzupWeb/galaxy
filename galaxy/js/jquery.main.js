@@ -561,6 +561,14 @@ function initSlideShow() {
 		duration: 650,
 		event: 'click'
 	});
+	$('.fade-gallery').fadeGallery({
+		slideElements: '.f-gall li',
+		pagerLinks: '.f-switch li',
+		pauseOnHover: false,
+		autoRotation: false,
+		duration: 650,
+		event: 'click'
+	});
 	$('.promo .slide-list li, .news-list .visual').each(function(index, el) {
 		var _src = $('img', this).attr('src');
 		$('img', this).hide();

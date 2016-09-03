@@ -505,6 +505,7 @@ ol li li {
     padding: 5px 0;
     list-style: none;
     overflow-y: auto;
+    max-height: 260px;
 }
 .optWrapper ul li:first-child {
     /*display: none;*/
@@ -987,7 +988,10 @@ textarea {
     background: #f1f7fa;
 }
 .shares li.pattern .frame,
-.shares.small li:nth-child(even) .frame {
+.shares.small li:nth-child(even) .frame,
+.shares.small li:nth-child(even) .action,
+.shares.small li:nth-child(even) .complet,
+.shares.small li:nth-child(even) .soldout {
     background: #fff;
 }
 .shares .visual {
@@ -1602,7 +1606,7 @@ textarea {
 .popup {
     font-size: 15px;
     position: relative;
-    min-height: 390px;
+    // min-height: 390px;
 }
 .popup .title {
     line-height: 62px;
@@ -1628,6 +1632,7 @@ textarea {
 .popup footer .button:last-child,
 .popup footer .button:nth-of-type(2) {
     float: right;
+    width: auto;
 }
 .popup footer.center .button {
     float: none;
@@ -1665,7 +1670,7 @@ textarea {
     width: 20px;
     height: 39px;
 }
-.popup .button.back:before {
+.popup .button.back:after {
     background: url(../images/back.png) no-repeat;
 }
 .basket {
@@ -2418,7 +2423,7 @@ textarea {
     margin: 0 0 10px;
 }
 .product-list.blocks .add {
-    margin: 0;
+    margin: 0 5px;
 }
 .product-list.blocks .button {
     display: block;
@@ -3323,7 +3328,7 @@ textarea {
 }
 .history-more {
     overflow: hidden;
-    /*display: none;*/
+    display: none;
 }
 .history-more .back2 {
     float: right;
@@ -4003,6 +4008,7 @@ textarea {
     float: left;
     width: 365px;
     margin-right: 30px;
+    overflow: visible;
 }
 .contact-form .row {
     margin-bottom: 19px;
@@ -4595,6 +4601,11 @@ textarea {
     #content {
         float: none;
         width: 100%;
+        padding: 0 10px;
+    }
+    .info-block {
+        margin-left: -10px;
+        margin-right: -10px;
     }
     .switchers {
         right: 0;
