@@ -15,13 +15,76 @@
 		<script type="text/javascript" src="js/sly.min.js"></script>
 		<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
 		<script type="text/javascript" src="js/icheck.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.main.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var src = [
+					{
+						value: "Sharp LC-70LE660X",
+						label: "Sharp LC-70LE660X",
+						cat: "LCD TVs",
+						price: "512",
+						old: "199 AZN",
+						icon: "images/product/img12.jpg"
+					},
+					{
+						value: "Sharp LC-70LE660X",
+						label: "Sharp LC-70LE660X",
+						cat: "LCD TVs",
+						price: "512",
+						old: "199 AZN",
+						icon: "images/product/img12.jpg"
+					},
+					{
+						value: "Sharp LC-70LE660X",
+						label: "Sharp LC-70LE660X",
+						cat: "LCD TVs",
+						price: "512",
+						old: "199 AZN",
+						icon: "images/product/img12.jpg"
+					},
+					{
+						value: "Sharp AB-70LE660X",
+						label: "Sharp AB-70LE660X",
+						cat: "LCD TVs",
+						price: "512",
+						old: "199 AZN",
+						icon: "images/product/img12.jpg"
+					}
+				];
+				$(".search input").autocomplete({
+					position: { my: "left top-1", at: "left+6 bottom", collision: "none" },
+					source: function(request, response) {
+						var results = $.ui.autocomplete.filter(src, request.term);
+						response(results.slice(0, 3)); //show 3 items.
+					},
+					open: function(event, ui) {
+						if($('.ui-autocomplete li').length >= 3) {
+							$('.ui-autocomplete').append('<li class="view-all"><a href="javascript:alert(\'redirecting...\')">View all results</a></li>'); //See all results
+						}
+					},
+					search: function( event, ui ) {
+						if($('.ui-autocomplete li').length >= 3) {
+							$('.ui-autocomplete').append('<li class="view-all"><a href="javascript:alert(\'redirecting...\')">View all results</a></li>'); //See all results
+						} else {
+							$('.ui-autocomplete li.view-all').remove();
+						}
+					}
+				})
+				.autocomplete( "instance" )._renderItem = function( ul, item ) {
+					return $( "<li>" )
+						.append( '<div class="visual"><img src="' + item.icon + '" /></div><div class="right"><span class="old">' + item.old + '</span><strong class="price">' + item.price + ' <span class="currency"></span></strong></div><div class="info"><strong class="name">' + item.label + '</strong><span class="category">' + item.cat + '</span></div>' )
+						.appendTo( ul );
+				};
+			});
+		</script>
 		<!--[if lte IE 8]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 		<!--[if gte IE 9]>
 		  <style type="text/css">
-		    .gradient {
-		       filter: none;
-		    }
+			.gradient {
+			   filter: none;
+			}
 		  </style>
 		<![endif]-->
 	</head>

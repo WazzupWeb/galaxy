@@ -2767,16 +2767,28 @@ textarea {
     list-style: none;
     position: relative;
 }
+.matrix .holder ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 .matrix .holder li {
     float: left;
     width: 20%;
     text-align: center;
+    min-height: 180px;
+    position: relative;
 }
 .matrix .visual {
     overflow: hidden;
     height: 103px;
     line-height: 103px;
     vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 .matrix .visual img {
     display: inline-block;
@@ -2786,6 +2798,16 @@ textarea {
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 2px;
+}
+.matrix .price.new + .old {
+    display: block;
+    color: #888;
+}
+.matrix .price.new {
+    color: #e40238;
+}
+.matrix .price.new .currency {
+    background-image: url(../images/icons/currency-red.png);
 }
 .product {
     overflow: hidden;
@@ -4553,7 +4575,107 @@ textarea {
 }
 
 /* End */
+
+.ui-autocomplete {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 200;
+    width: 634px !important;
+    background-color: #fff;
+}
+.ui-autocomplete li {
+    height: 88px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #c3c3c3;
+    margin-bottom: -1px;
+    padding: 0 25px 0 15px;
+    transition: background 500ms ease;
+}
+.ui-autocomplete li:hover {
+	background-color: #f1f7fa;
+}
+.ui-autocomplete .visual {
+    float: left;
+    width: 87px;
+    height: 87px;
+    line-height: 87px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.ui-autocomplete .visual img {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+.ui-autocomplete .right {
+    float: right;
+    padding-top: 32px;
+}
+.ui-autocomplete .info {
+    overflow: hidden;
+    padding-top: 24px;
+}
+.ui-autocomplete .title {
+    display: block;
+    font: 700 17px/20px 'Roboto Condensed', sans-serif;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui-autocomplete .category {
+    display: block;
+    font-size: 13px;
+    line-height: 15px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui-autocomplete .old {
+	line-height: 24px;
+	vertical-align: top;
+	margin-right: 25px;
+	color: #999;
+}
+.ui-autocomplete .view-all {
+	height: auto;
+	padding: 0;
+	text-align: center;
+	border: 1px solid #b2d0db;
+}
+.ui-autocomplete .view-all a {
+	display: block;
+	color: #02a7eb;
+	background-color: #f2f7fb;
+	font: 700 15px/40px 'Roboto Condensed', sans-serif;
+}
+.ui-autocomplete .view-all a:hover {
+	color: #e8002c;
+}
+
 @media screen and (max-width: 765px) {
+	.ui-autocomplete {
+		width: 359px !important;
+	}
+	.ui-autocomplete li {
+		padding-right: 15px;
+	}
+	.ui-autocomplete .right {
+		text-align: right;
+		padding-top: 20px;
+		padding-left: 5px;
+	}
+	.ui-autocomplete .old {
+		display: block;
+		margin: 0;
+	}
     body {
         min-width: 640px;
     }
@@ -4977,6 +5099,13 @@ textarea {
     }
 }
 @media screen and (max-width: 635px) {
+	.ui-autocomplete {
+		left: 0px !important;
+		width: 320px !important;
+	}
+	.ui-autocomplete .visual {
+		margin-right: 10px;
+	}
     body {
         min-width: 320px;
     }
