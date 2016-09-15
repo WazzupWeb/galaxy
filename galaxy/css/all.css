@@ -1109,7 +1109,7 @@ textarea {
 }
 .small .action .buy{
     line-height: 45px;
-    width: 65px;
+    width: 55px;
 }
 .shares.small .soldout, .shares.small .complet{
     line-height: 45px;
@@ -2374,6 +2374,10 @@ textarea {
     border: solid #b2d0dc;
     border-width: 1px 0;
     margin-bottom: -1px;
+    background: none;
+}
+.product-list.blocks li.pattern {
+    background: #f1f7fa;
 }
 .product-list.blocks25 li {
     width: 25%;
@@ -4137,6 +4141,7 @@ textarea {
 .f-switch a {
     display: block;
     height: 100%;
+    overflow: hidden;
 }
 .f-switch li:after {
     content: '';
@@ -5920,6 +5925,11 @@ textarea {
     .casino {
         display: none;
     }
+    .action .buy {
+        width: 55px;
+        line-height: 45px;
+    }
+    .shares .soldout, .shares .complet {line-height: 45px;}
 }
 .error, .red{
     color:red;

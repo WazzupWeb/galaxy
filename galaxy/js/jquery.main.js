@@ -574,6 +574,10 @@ function initSlideShow() {
 		$('img', this).hide();
 		$(this).css('background-image', 'url(' + _src + ')');
 	});
+	if($('.promo').size()) $('#content').css({
+		'padding-left': 0,
+		'padding-right': 0
+	});
 }
 
 jQuery.fn.fadeGallery = function(_options) {
