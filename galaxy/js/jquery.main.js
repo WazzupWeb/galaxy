@@ -578,6 +578,31 @@ function initSlideShow() {
 		'padding-left': 0,
 		'padding-right': 0
 	});
+	if ('elevateZoom' in $.fn && !device.mobile() && !device.tablet()) {
+		$(".image-zoom").each(function(index, el) {
+			$(this).elevateZoom({
+				zoomWindowPosition: 1,
+				zoomWindowOffetx: 15,
+				zoomWindowOffety: -5,
+				zoomWindowWidth: 365,
+				zoomWindowHeight: 240,
+				borderSize: 1,
+				borderColour: '#b2d0dc'
+			});
+		});
+		var _i = 0;
+		setTimeout(function(){
+			$('.zoomContainer').each(function(index, el) {
+				$(this).addClass('zoomContainer' + _i);
+				_i++;
+			});
+		}, 500);
+		$('.product .gallery li').click(function(event) {
+			var _index = $(this).index();
+			$('.zoomContainer').hide();
+			$('.zoomContainer' + _index).show();
+		});
+	}
 }
 
 jQuery.fn.fadeGallery = function(_options) {

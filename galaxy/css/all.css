@@ -2374,13 +2374,13 @@ textarea {
     border: solid #b2d0dc;
     border-width: 1px 0;
     margin-bottom: -1px;
-    background: none;
 }
-.product-list.blocks li.pattern {
+.product-list.blocks25 li.pattern {
     background: #f1f7fa;
 }
 .product-list.blocks25 li {
     width: 25%;
+    background: none;
 }
 .product-list.blocks li:nth-child(-n+3) {
     border-top: 0;
@@ -4664,6 +4664,35 @@ textarea {
 .ui-autocomplete .view-all a:hover {
 	color: #e8002c;
 }
+.zoomContainer {
+    z-index: 10;
+    cursor: pointer;
+    display: none;
+}
+.zoomContainer0 {display: block;}
+.zoomWindowContainer,
+.zoomLens {
+    cursor: pointer;
+}
+.zoomContainer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    background: url(../images/svg/ZoomInLupa.svg) no-repeat calc(50% - 30px) 50%;
+}
+.zoomContainer:hover:before {
+    opacity: 1;
+}
 
 @media screen and (max-width: 765px) {
 	.ui-autocomplete {
@@ -5908,7 +5937,7 @@ textarea {
     .photo-popup .photo {
         width: 320px;
         height: 410px;
-        left: calc(50% - 205px);
+        top: calc(50% - 205px);
         left: calc(50% - 160px);
     }
     .photo-popup .fade {
