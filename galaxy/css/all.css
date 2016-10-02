@@ -917,6 +917,9 @@ textarea {
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
+.slide-list li.active {
+    z-index: 5;
+}
 .slide-list a {
     display: block;
     height: 100%;
@@ -2168,6 +2171,9 @@ textarea {
 .filter .SumoSelect .optWrapper{
     top:100%;
 }
+.filter input[type="text"] {
+    padding: 0 10px;
+}
 .sort .col:first-child .SumoSelect {
     width: 135px;
 }
@@ -2622,20 +2628,20 @@ textarea {
     padding: 6px 0;
 }
 .filter-list label {
-    display: inline-block;
+    display: block;
     vertical-align: top;
     font-weight: bold;
     color: #000;
-    cursor: pointer;
 }
 .filter-list .check, .filter-list .radio{
     float: left;
     margin-top: 1px;
 }
 .filter-list label span {
-    display: block;
-    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
     padding-left: 10px;
+    cursor: pointer;
 }
 .filter .button {
     width: 165px;
@@ -4565,7 +4571,7 @@ textarea {
     position: fixed;
     z-index: 100;
     top: 0;
-    left: -100%;
+    left: -5000px;
     width: 100%;
     height: 100%;
 }
